@@ -1,0 +1,92 @@
+/* Legal App Custom Styles */
+
+.legal-case-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.legal-case-card.critical {
+    border-left: 4px solid #e74c3c;
+}
+
+.legal-case-card.high {
+    border-left: 4px solid #f39c12;
+}
+
+.legal-case-card.medium {
+    border-left: 4px solid #3498db;
+}
+
+.legal-case-card.low {
+    border-left: 4px solid #27ae60;
+}
+
+.case-status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-open {
+    background-color: #3498db;
+    color: white;
+}
+
+.status-in-progress {
+    background-color: #f39c12;
+    color: white;
+}
+
+.status-closed {
+    background-color: #27ae60;
+    color: white;
+}
+
+.status-pending {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.hearing-calendar {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.document-timeline {
+    border-left: 2px solid #3498db;
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3498db;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .legal-case-card {
+        padding: 10px;
+    }
+    
+    .hearing-calendar {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "doctype": "DocType",
+    "module": "Legal App",
+    "name": "Client",
+    "is_submittable": 0,
+    "show_name_in_global_search": 1,
+    "track_changes": 1,
+    "fields": [
+        {
+            "fieldname": "client_type",
+            "label": "Client Type",
+            "fieldtype": "Select",
+            "options": "Individual\nOrganization",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "first_name",
+            "label": "First Name",
+            "fieldtype": "Data",
+            "depends_on": "eval:doc.client_type == 'Individual'"
+        },
+        {
+            "fieldname": "last_name",
+            "label": "Last Name",
+            "fieldtype": "Data",
+            "depends_on": "eval:doc.client_type == 'Individual'"
+        },
+        {
+            "fieldname": "organization_name",
+            "label": "Organization Name",
+            "fieldtype": "Data",
+            "depends_on": "eval:doc.client_type == 'Organization'"
+        },
+        {
+            "fieldname": "full_name",
+            "label": "Full Name",
+            "fieldtype": "Data",
+            "read_only": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "email",
+            "label": "Email",
+            "fieldtype": "Data",
+            "options": "Email"
+        },
+        {
+            "fieldname": "mobile_no",
+            "label": "Mobile No",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "phone",
+            "label": "Phone",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "address",
+            "label": "Address",
+            "fieldtype": "Link",
+            "options": "Address"
+        }
+    ],
+    "links": [
+        {
+            "link_doctype": "Legal Case",
+            "link_fieldname": "client"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1
+        },
+        {
+            "role": "Legal Manager",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1
+        },
+        {
+            "role": "Legal Counsel",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 0
+        }
+    ]
+}

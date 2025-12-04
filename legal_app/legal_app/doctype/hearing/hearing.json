@@ -1,0 +1,102 @@
+{
+    "doctype": "DocType",
+    "module": "Legal App",
+    "name": "Hearing",
+    "is_submittable": 0,
+{
+    "doctype": "DocType",
+    "module": "Legal App",
+    "name": "Hearing",
+    "is_submittable": 0,
+    "show_name_in_global_search": 1,
+    "track_changes": 1,
+    "fields": [
+        {
+            "fieldname": "title",
+            "label": "Title",
+            "fieldtype": "Data",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "legal_case",
+            "label": "Legal Case",
+            "fieldtype": "Link",
+            "options": "Legal Case",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "hearing_date",
+            "label": "Hearing Date",
+            "fieldtype": "Datetime",
+            "reqd": 1
+        },
+        {
+            "fieldname": "court",
+            "label": "Court",
+            "fieldtype": "Link",
+            "options": "Court"
+        },
+        {
+            "fieldname": "judge",
+            "label": "Judge",
+            "fieldtype": "Link",
+            "options": "Judge"
+        },
+        {
+            "fieldname": "status",
+            "label": "Status",
+            "fieldtype": "Select",
+            "options": "Scheduled\nIn Progress\nCompleted\nCancelled\nAdjourned",
+            "default": "Scheduled"
+        },
+        {
+            "fieldname": "hearing_notes",
+            "label": "Hearing Notes",
+            "fieldtype": "Text Editor"
+        },
+        {
+            "fieldname": "outcome",
+            "label": "Outcome",
+            "fieldtype": "Small Text"
+        },
+        {
+            "fieldname": "next_hearing_date",
+            "label": "Next Hearing Date",
+            "fieldtype": "Datetime"
+        }
+    ],
+    "links": [
+        {
+            "link_doctype": "Legal Case",
+            "link_fieldname": "legal_case"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1
+        },
+        {
+            "role": "Legal Manager",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1
+        },
+        {
+            "role": "Legal Counsel",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 0
+        }
+    ]
+}

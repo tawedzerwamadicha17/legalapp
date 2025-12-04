@@ -1,0 +1,132 @@
+{
+    "doctype": "DocType",
+    "module": "Legal App",
+    "name": "Legal Case",
+    "is_submittable": 0,
+    "show_name_in_global_search": 1,
+    "track_changes": 1,
+    "track_seen": 1,
+    "track_views": 1,
+    "search_fields": "case_title, case_number, party_names",
+    "fields": [
+        {
+            "fieldname": "case_title",
+            "label": "Case Title",
+            "fieldtype": "Data",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "case_number",
+            "label": "Case Number",
+            "fieldtype": "Data",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "client",
+            "label": "Client",
+            "fieldtype": "Link",
+            "options": "Client",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "case_type",
+            "label": "Case Type",
+            "fieldtype": "Link",
+            "options": "Case Type",
+            "reqd": 1
+        },
+        {
+            "fieldname": "filing_date",
+            "label": "Filing Date",
+            "fieldtype": "Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "closure_date",
+            "label": "Closure Date",
+            "fieldtype": "Date"
+        },
+        {
+            "fieldname": "status",
+            "label": "Status",
+            "fieldtype": "Select",
+            "options": "Open\nIn Progress\nPending\nClosed\nAppealed",
+            "default": "Open"
+        },
+        {
+            "fieldname": "priority",
+            "label": "Priority",
+            "fieldtype": "Select",
+            "options": "Low\nMedium\nHigh\nCritical"
+        },
+        {
+            "fieldname": "party_names",
+            "label": "Party Names",
+            "fieldtype": "Small Text",
+            "reqd": 1
+        },
+        {
+            "fieldname": "next_hearing_date",
+            "label": "Next Hearing Date",
+            "fieldtype": "Date"
+        },
+        {
+            "fieldname": "court",
+            "label": "Court",
+            "fieldtype": "Link",
+            "options": "Court"
+        },
+        {
+            "fieldname": "judge",
+            "label": "Judge",
+            "fieldtype": "Link",
+            "options": "Judge"
+        },
+        {
+            "fieldname": "case_description",
+            "label": "Case Description",
+            "fieldtype": "Text Editor"
+        },
+        {
+            "fieldname": "days_until_hearing",
+            "label": "Days Until Hearing",
+            "fieldtype": "Int",
+            "read_only": 1
+        }
+    ],
+    "links": [
+        {
+            "link_doctype": "Hearing",
+            "link_fieldname": "legal_case"
+        },
+        {
+            "link_doctype": "Legal Document",
+            "link_fieldname": "linked_case"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "Legal Manager",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1
+        },
+        {
+            "role": "Legal Counsel",
+            "permlevel": 0,
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 0
+        }
+    ]
+}
